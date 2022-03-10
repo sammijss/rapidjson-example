@@ -36,20 +36,20 @@ int main()
     document.AddMember("Age", rapidjson::Value().SetInt(35), allocator);
 
     //Create an array type, similar to std::vector
-	rapidjson::Value array(rapidjson::kArrayType);
-	array.PushBack("Traveling", allocator);
-	array.PushBack("Exercise", allocator);
+    rapidjson::Value array(rapidjson::kArrayType);
+    array.PushBack("Traveling", allocator);
+    array.PushBack("Exercise", allocator);
 
     document.AddMember("Hobby", array, allocator);
 
     //Create an object type
-	rapidjson::Value object(rapidjson::kObjectType);
-	object.AddMember("Country", "India", allocator);
-	object.AddMember("State", "Chandigarh", allocator);
-	object.AddMember("City", "Chandigarh", allocator);
-	object.AddMember("Pincode", "160104", allocator);
+    rapidjson::Value object(rapidjson::kObjectType);
+    object.AddMember("Country", "India", allocator);
+    object.AddMember("State", "Chandigarh", allocator);
+    object.AddMember("City", "Chandigarh", allocator);
+    object.AddMember("Pincode", "160104", allocator);
 
-	document.AddMember("Address", object, allocator);
+    document.AddMember("Address", object, allocator);
 
     rapidjson::StringBuffer buffer;
     rapidjson::PrettyWriter<rapidjson::StringBuffer> writer(buffer);
